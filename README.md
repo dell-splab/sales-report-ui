@@ -33,11 +33,16 @@ O projeto deverá ser desenvolvido em Angular. Podem ser adicionadas bibliotecas
 # Etapa 2 - Página de Leads
 
 **Tarefa 1** - Desenvolver uma tela que lista todos os leads (visitantes), em forma de tabela com as seguintes informações:
-| Nome| Email | Página acessada |
-|:---:|:-----:|:---------------:|
+| Nome | Email | Página acessada |
+|:----:|:-----:|:---------------:|
 | Sara Morse | morse_s@gmail.com | acessorios |
 
 **Tarefa 2** - Incluir um botão para adicionar um novo lead, na parte superior, que abre um modal para o usuário preencher as informações necessárias para o cadastro. Após o cadastro a lista de leads deve ser atualizada.
+
+**Tarefa 3** - Incluir uma lista de oportunidades de vendas, em forma de tabela com as seguintes informações:
+| Nome do Cliente | Nome do Produto (possível venda) | 
+|:---------------:|:--------------------------------:|
+| Tyler Kennedy | Mouse Dell sem fio WM126 - Preto |
 
 # Etapa 3 - Página de Vendas
 
