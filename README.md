@@ -1,23 +1,13 @@
-# Intro
+# Intro 
 
-<!-- 
+Este é um projeto/desafio para que possamos praticar as habilidades como Front-end Developer.
 
-Este é um projeto/desafio para que possamos praticar as habilidades como Back-end Developer.
-
-Nesse projeto vamos desenvolver uma REST API que irá disponibilizar os dados de vendas dos usuários de uma loja online de computadores chamada `Déu Company` (a maior concorrente da DELL rs).
-
-O objetivo é disponibilizar essa API para conexão com outras aplicações, em especial, a responsável pelo [Front-End](https://github.com/dell-splab/sales-report-ui) da loja. 
-
--->
+Nesse projeto vamos desenvolver uma aplicação para controlar os dados de vendas dos usuários de uma loja online de computadores chamada `Déu Company` (a maior concorrente da DELL rs).
 
 ### Modelo de dados
 
-<!-- 
+Para obter os dados necessários vamos utilizar a [API](https://github.com/dell-splab/sales-report-api) desenvolvida pelo time de back-end. 
 
-    Talvez fazer referência a modelagem de dados que estará presente em sales-report-api,
-    Ou colocar aqui alguns snippets descrevendo o principal.
-
- -->
 # Instruções iniciais
 
 1. Depois de clonar este repositório faça checkout para branch `dev`.
@@ -27,10 +17,48 @@ O objetivo é disponibilizar essa API para conexão com outras aplicações, em 
 
 ### Stack
 
-Sobre a stack, ferramentas, bibliotecas etc.
+O projeto deverá ser desenvolvido em Angular. Podem ser adicionadas bibliotecas para facilitar o desenvolvimento, mas o design dos componentes deve ser o mais próximo possível ao sugerido pela nossa designer;
 
-# Etapa 1 - TODO
+# Etapa 1 - Página de Clientes
 
-**Tarefa 1** - TODO
+**Tarefa 1** - Desenvolver uma tela que lista todos os clientes, em forma de tabela com as seguintes informações:
+| Nome | Email | Total Gasto | Número de Compras | Data da última compra | Ações |
+|:----:|:-----:|:-----------:|:-----------------:|:---------------------:|:-----:|
+| Tyler Kennedy | kennedy.t@gmail.com | R$2.528,00 | 1 | 11/05/2022 | (Botão para atualizar) |
 
-**Tarefa 2** - TODO
+**Tarefa 2** - O campo *Ações* de cada linha da tabela será preenchido pelo botão **atualizar**. O botão atualizar abre um modal para o usuário preencher as informações necessárias para a atualização do cadastro de um cliente.
+
+**Tarefa 3** - Incluir um botão para adicionar um novo cliente, na parte superior, que abre um modal para o usuário preencher as informações necessárias para o cadastro. Após o cadastro a lista de clientes deve ser atualizada.
+
+# Etapa 2 - Página de Leads
+
+**Tarefa 1** - Desenvolver uma tela que lista todos os leads (visitantes), em forma de tabela com as seguintes informações:
+| Nome| Email | Página acessada |
+|:---:|:-----:|:---------------:|
+| Sara Morse | morse_s@gmail.com | acessorios |
+
+**Tarefa 2** - Incluir um botão para adicionar um novo lead, na parte superior, que abre um modal para o usuário preencher as informações necessárias para o cadastro. Após o cadastro a lista de leads deve ser atualizada.
+
+# Etapa 3 - Página de Vendas
+
+**Tarefa 1** - Desenvolver uma tela que lista todas as vendas, em forma de tabela com as seguintes informações:
+| Nome do Cliente | Nome do Produto | Data da compra |
+|:---------------:|:---------------:|:--------------:|
+| Tyler Kennedy | OptiPlex 3090 Micro | 11/05/2022 |
+
+**Tarefa 2** - Nessa tela também deve ter um botão para registrar uma venda, na parte superior, que abre um modal para o usuário preencher as informações necessárias para o cadastro. Após o cadastro a lista de vendas deve ser atualizada.
+
+# Etapa 4 - Página de Reports
+As seguintes tarefas compõem uma mesma tela, separada em abas ou seções.
+
+**Tarefa 1** - Desenvolver uma tela que lista as vendas (geral e filtradas por data).
+
+**Tarefa 2** - Desenvolver uma tela que lista as compras dos clientes (geral e filtradas por cliente).
+
+**Tarefa 3** - Desenvolver uma tela que lista os produtos topsellers (geral e filtrados por categoria).
+
+## As próximas tarefas serão opcionais, porém desejáveis
+
+**Tarefa 1** Escrever Unit Tests para os componentes e serviços.
+
+**Tarefa 2** Criar a página de listar produtos da loja (similar às outras listagens, porém o campo ação em cada linha é preenchido com o botão de excluir um produto).
