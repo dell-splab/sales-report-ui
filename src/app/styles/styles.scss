@@ -1,9 +1,10 @@
 @import "./mixins";
+@import "./form-fields";
 @import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
 @import url("https://uicore.dellcdn.com/1.5.2/css/dds-reboot.min.css");
 @import url("https://uicore.dellcdn.com/1.5.2/css/dds-all-with-fonts.min.css");
 @import url("https://uicore.dellcdn.com/1.5.2/js/index.min.js");
-@import url('https://uicore.dellcdn.com/1.5.2/css/dds-fonts.css');
+@import url("https://uicore.dellcdn.com/1.5.2/css/dds-fonts.css");
 
 :root {
   --header-height: 50px;
@@ -46,7 +47,6 @@ h1,
 h2 {
   margin-bottom: 2rem;
 }
-
 
 .info {
   width: 100%;

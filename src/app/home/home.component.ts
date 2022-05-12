@@ -7,12 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  // configCard: any = {
-  //   iconName: 'config',
-  //   label: 'Configuration',
-  //   iconStyles: 'dds__icons dds__gear',
-  // };
-
+  headers = ['snapshot date', 'Objects'];
   constructor(private router: Router) {
   }
 

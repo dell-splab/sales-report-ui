@@ -4,12 +4,91 @@
     <label>/</label>
     <label class="active">Home Page</label>
   </div>
+  <p>Alguns componentes úteis:</p>
+  <app-dell-btn
+    style="width: 100px"
+    type="secondary"
+    [disabled]="false"
+    (onClick)="(null)"
+  >
+    <label class="centralize">Cancel</label>
+  </app-dell-btn>
+  <app-dell-btn
+    style="width: 100px"
+    type="primary"
+    [disabled]="false"
+    (onClick)="(null)"
+  >
+    <label class="centralize">Save</label>
+  </app-dell-btn>
   <div class="container-cards">
-    <!--
-    <div class="card" (click)="navigate(configCard.iconName)">
+    <div class="card">
       <app-dell-icon dellStyles="dds__gear extra-large"></app-dell-icon>
-      <label>{{ configCard.label.toUpperCase() }}</label>
+      <label>Config</label>
     </div>
-    -->
+    <div class="card">
+      <app-dell-icon dellStyles="dds__gear extra-large"></app-dell-icon>
+      <label>Config</label>
+    </div>
+    <div class="card">
+      <app-dell-icon dellStyles="dds__gear extra-large"></app-dell-icon>
+      <label>Config</label>
+    </div>
+    <div class="card">
+      <app-dell-icon dellStyles="dds__gear extra-large"></app-dell-icon>
+      <label>Config</label>
+    </div>
+  </div>
+  <div class="pre-table">
+    <div class="search-field">
+      <div class="form-input-text-container">
+        <label class="label">Name</label>
+        <input type="text" placeholder="Search text" />
+        <app-dell-icon
+          class="search-icon"
+          dellStyles="dds__search"
+        ></app-dell-icon>
+      </div>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <td>
+              <span>Column</span>
+            </td>
+            <td>
+              <span>Test</span>
+            </td>
+            <td>
+              <span>Test</span>
+            </td>
+            <td>
+              <span>Test</span>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>config</td>
+            <td>test</td>
+            <td>config</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>config</td>
+            <td>test</td>
+            <td>config</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>config</td>
+            <td>test</td>
+            <td>config</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
