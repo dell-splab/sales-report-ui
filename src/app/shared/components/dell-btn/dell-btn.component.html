@@ -1,0 +1,12 @@
+<div class="dds__mb-2">
+  <button
+    role="button"
+    type="button"
+    class="dds__btn dds__text-truncate"
+    [disabled]="disabled"
+    [class]="getClass()"
+    (click)="onClick.emit($event)"
+  >
+    <ng-content></ng-content>
+  </button>
+</div>

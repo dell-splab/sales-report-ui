@@ -15,6 +15,11 @@ Para obter os dados necessários vamos utilizar a [API](https://github.com/dell-
 3. Em nosso [mural de atividades](https://github.com/orgs/dell-splab/projects/1) certifique-se de adicionar a tarefa que está fazendo e em qual etapa se encontra.
 4. Faça um Pull Request! :D 
 
+## Links Importantes
+[Figma](https://www.figma.com/file/R9MqAQGWgFAw474jpemtcK/Teste-Salesforce?node-id=0%3A1)
+
+[Dell Design System](https://www.delldesignsystem.com/) (procurar a opção Vanilla)
+
 ### Stack
 
 O projeto deverá ser desenvolvido em Angular. Podem ser adicionadas bibliotecas para facilitar o desenvolvimento, mas o design dos componentes deve ser o mais próximo possível ao sugerido pela nossa designer;

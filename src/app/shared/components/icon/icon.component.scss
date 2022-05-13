@@ -1,0 +1,28 @@
+.container-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.extra-small {
+  font-size: 0.8rem;
+}
+
+.small {
+  font-size: 1.2rem;
+}
+
+.medium {
+  font-size: 1.8rem;
+}
+
+.large {
+  font-size: 2rem;
+}
+
+.extra-large {
+  font-size: 3rem;
+}
