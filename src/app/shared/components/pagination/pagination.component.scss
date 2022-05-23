@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+}
+
+@import url("../dell-btn/dell-btn.component.scss")
+dds__btn-secondary;
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .previous-button {
+    width: 33%;
+    display: flex;
+    border: none;
+  }
+
+  .page-info {
+    display: flex;
+    width: 33%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1px;
+    input {
+      background-color: transparent;
+      color: inherit;
+      width: 40px;
+      height: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    span {
+      padding-top: 3px;
+    }
+  }
+  .nav-icon {
+    font-size: 16px;
+    &.left {
+      padding-right: 5px;
+    }
+    &.right {
+      padding-left: 5px;
+    }
+  }
+  .next-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    width: 33%;
+    align-items: center;
+
+    & > app-dell-btn {
+      margin-bottom: 5px;
+    }
+    .items-select {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin-left: 10px;
+      margin-bottom: 5px;
+      align-items: center;
+
+      select {
+        width: 3.5rem;
+        height: 30px;
+        padding-top: 5px;
+        padding-left: 2px;
+        background-color: transparent;
+        border: 1px solid var(--secondary-button) !important;
+      }
+      span {
+        width: 5rem;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.page-info > input {
+  margin-left: 8px;
+  margin-right: 8px;
+  text-align: center;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.button-label {
+  padding: 5px 0px 5px 0px;
+  color: var(--text-primary);
+}
+
+.items-page {
+  white-space: nowrap;
+}
+:host ::ng-deep {
+  button[class~="dds__btn-secondary"]:disabled {
+    opacity: 0.5 !important;
+    background-color: transparent !important;
+
+    span,
+    label {
+      color: var(--text-tertiary);
+    }
+  }
+}
+
+select.dds__form-control {
+  color: var(--secondary-button);
+  option {
+    background: var(--background-primary);
+  }
+}
