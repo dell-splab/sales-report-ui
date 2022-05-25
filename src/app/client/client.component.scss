@@ -61,8 +61,8 @@ table {
     width: 100%;
     display: grid;
     grid-template-columns: 15% 25% 15% 20% 15% 10%;
+    cursor: default;
     padding: 0;
-    cursor: pointer;
   }
   thead {
     width: calc(100% - 10px);
@@ -90,6 +90,9 @@ table {
     table-layout: fixed;
     text-align: center;
     vertical-align: middle;
+    span {
+      cursor: pointer;
+    }
     div {
       display: flex;
       justify-content: flex-end;
