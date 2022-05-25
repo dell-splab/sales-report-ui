@@ -1,0 +1,52 @@
+<div class="container-clients">
+    <div class="info">
+        <app-dell-icon dellStyles="dds__user-group"></app-dell-icon>
+        <label>/</label>
+        <label class="active">Client Listing Page</label>
+    </div>
+    <div class="pre-table">
+        <div class="search-field">
+        <div class="form-input-text-container">
+            <label class="label">Name</label>
+            <input type="text" placeholder="Search text" />
+            <app-dell-icon
+            class="search-icon"
+            dellStyles="dds__search"
+            ></app-dell-icon>
+        </div>
+        </div>
+        <div class="table-container">
+        <table>
+            <thead>
+            <tr>
+                <td *ngFor="let header of headers" id="header">
+                <span>{{ header.toUpperCase() }}</span>
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of filteredItems">
+                <td>{{ item.name }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.totalSpend }}</td>
+                <td>{{ item.numberPurchases }}</td>
+                <td>{{ item.lastPurchaseData }}</td>
+                <td> <span><app-dell-icon dellStyles="dds__pencil"></app-dell-icon></span> </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="pagination">
+            <app-pagination
+                [items]="items"
+                [fromItem]="fromItem"
+                [toItem]="toItem"
+                [currentPage]="currentPage"
+                [pageSize]="pageSize"
+                [changesSubject]="itemsSubject"
+                (onPageChanged)="changePage($event)"
+                (onItemsPerPageChanged)="changeItemsPerPage($event)"
+            ></app-pagination>
+        </div>
+    </div>
+</div>
