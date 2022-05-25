@@ -26,12 +26,13 @@ export class ClientComponent implements OnInit {
   ];
 
   filteredItems: any[] = [];
-  headers = ['Nome', 'Email', 'Total Gasto', 'Número de Compras', 'Data da última compra', 'Ações'];
+  headers = ['Name', 'Email', 'Total spent', 'Number of purchases', 'Last purchase date', 'Action'];
 
   fromItem = 0;
   toItem = 4;
   currentPage = 0;
   pageSize = 5;
+  newClientStatus = false;
 
   constructor(private router: Router) { }
 
@@ -57,6 +58,11 @@ export class ClientComponent implements OnInit {
 
   changeItemsPerPage(event: any) {
     this.pageSize = parseInt(event);
+  }
+
+  changeClientStatus() {
+    this.newClientStatus = !this.newClientStatus;
+    console.log(this.newClientStatus)
   }
 
 }
