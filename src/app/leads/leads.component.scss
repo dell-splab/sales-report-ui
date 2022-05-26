@@ -56,20 +56,28 @@ label {
 }
 
 .pre-table {
-  width: 60%;
-  height: 300px;
+  width: 90%;
+  height: 100%;
   border: 1px solid var(--border-color);
   padding: 10px;
 }
-.table-container {
+
+.double-table {
+  display: flex;
+  flex-direction: row;
+}
+.table-container1 {
   height: calc(100% - #{$search-field-height} - #{$filter-height});
-  overflow: auto;
+  overflow: hidden;
+  width: 70%;
 }
-.pagination {
-  margin-top:10px;
-  width: 100%;
-  padding-right: 15px;
+
+table-container {
+  height: calc(100% - #{$search-field-height} - #{$filter-height});
+  overflow: hidden;
+  width: 30%;
 }
+
 
 :host ::ng-deep {
   .search-field {
@@ -95,7 +103,7 @@ table {
   tr {
     width: 100%;
     display: grid;
-    grid-template-columns: 45% 20% 15% 20%;
+    grid-template-columns: 25% 25% 25% 25%;
     padding: 0;
     cursor: pointer;
   }
@@ -105,6 +113,7 @@ table {
   tbody {
     width: 100%;
     display: block;
+    overflow: auto;
     max-height: 41vh;
     padding: 0;
   }
