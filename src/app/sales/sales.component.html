@@ -1,0 +1,31 @@
+<div class="container-sales">
+    <div class="info">
+        <app-dell-icon dellStyles="dds__cart"></app-dell-icon>
+        <label>/</label>
+        <label class="active">Sales</label>
+    </div>
+    <div class="pre-table">
+        <div class="search-field">
+            <div class="form-input-text-container">
+                <label class="label">Search</label>
+                <input type="text" placeholder="Search text" />
+                <app-dell-icon
+                  class="search-icon"
+                  dellStyles="dds__search"
+                ></app-dell-icon>
+              </div>
+        </div>
+        <div class="new-sales">
+            <app-dell-btn
+              style="width: 100px"
+              type="primary"
+              [disabled]="false"
+              (onClick)="changeSalesStatus()"
+            >
+              <span class="dds__icons dds__plus-add"></span>
+              <label class="centralize"> New sale</label>
+            </app-dell-btn>
+            
+          </div>
+    </div>
+</div>
