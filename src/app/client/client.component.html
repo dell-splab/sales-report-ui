@@ -1,4 +1,4 @@
-<div class="dds__overlay" aria-hidden="false"></div>
+<div *ngIf="newClientStatus" id="overlay"></div>
 <div class="container-clients">
     <div class="info">
         <app-dell-icon dellStyles="dds__user"></app-dell-icon>
@@ -30,29 +30,51 @@
                 </app-dell-btn>
             </div>
 
-            <div *ngIf= "newClientStatus" class="dds__card card">
+            <div *ngIf= "newClientStatus" class="card dds__card card">
                 <div class="dds__card__content">
-                  <div class="dds__card__header">
-                    <i class="dds__icon dds__icon--accessibility"></i>
-                    <span class="dds__card__header__text">
-                      <h5>Add new client</h5>
-                    </span>
+                  <div class="dds__input-text__container">
+                    <label id="text-input-label-421281248" for="text-input-control-name-421281248">Name</label>
+                    <div class="dds__input-text__wrapper">
+                      <input
+                        type="text"
+                        class="dds__input-text input"
+                        name="text-input-control-name-421281248"
+                        id="text-input-control-421281248"
+                        required=""
+                        aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
+                      />
+                    </div>
                   </div>
-                  <div class="dds__card__action">
+                  <div class="dds__input-text__container">
+                    <label id="text-input-label-421281248" for="text-input-control-name-421281248">Email</label>
+                    <div class="dds__input-text__wrapper larg-test">
+                      <input
+                        type="text"
+                        class="dds__input-text input"
+                        name="text-input-control-name-421281248"
+                        id="text-input-control-421281248"
+                        required=""
+                        aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
+                      />
+                    </div>
+                  </div>
+                  <div class="dds__card__action button">
                     <app-dell-btn
+                        class="button-card"
                         style="width: 100px"
                         type="primary"
                         [disabled]="false"
                         (onClick)="changeClientStatus()">
-                        <label class="centralize">
+                        <label class="centralize-label">
                             Save</label>
                     </app-dell-btn>
                     <app-dell-btn
+                        class="button-card"
                         style="width: 100px"
                         type="primary"
                         [disabled]="false"
                         (onClick)="changeClientStatus()">
-                        <label class="centralize">
+                        <label class="centralize-label">
                             Cancel</label>
                     </app-dell-btn>
                   </div>
