@@ -6,15 +6,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { ThemeService } from './styles/theme/theme.service';
-import { LeadsComponent } from './leads/leads.component';
-import { ClientComponent } from './client/client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    LeadsComponent,
-    ClientComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
