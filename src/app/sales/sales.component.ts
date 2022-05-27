@@ -10,22 +10,22 @@ import { Observable, Subject } from 'rxjs';
 export class SalesComponent implements OnInit {
 
   SalesSubject: Observable<any> = new Subject<any>();
-  Sales: any[] = [
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
-    { name: 'Tyler Kennedy', SaleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+  sales: any[] = [
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
+    { name: 'Tyler Kennedy', saleName: 'OptiPlex 3090 Micro', purchaseDate: '5-11-2022' },
   ]
 
   filteredSales: any[] = [];
@@ -54,12 +54,12 @@ export class SalesComponent implements OnInit {
 
     this.toSale = toSale;
 
-    this.filteredSales = this.Sales.slice(fromSale, toSale + 1);
+    this.filteredSales = this.sales.slice(fromSale, toSale + 1);
 
   }
 
   changePage(event: any) {
-    this.fillTable(event.fromSale, event.toSale)
+    this.fillTable(event.from, event.to)
   }
 
   changeItemsPerPage(event: any) {
