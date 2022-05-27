@@ -21,7 +21,6 @@ export class NavbarComponent implements OnInit, DoCheck {
   collapsed: boolean = false;
   items: Array<any> =  [
     { iconName: 'home', label: 'Home', iconStyles: 'dds__icons dds__home' },
-    { iconName: 'sales', label: 'Sales', iconStyles: 'dds__icons dds__cart' },
   ];
   selectedItem: any = { iconName: 'home', label: 'Home', iconStyles: 'dds__icons dds__home' };
 
@@ -54,8 +53,9 @@ export class NavbarComponent implements OnInit, DoCheck {
   }
 
   changeSelectedItem(iconName: string) {
-    this.selectedItem = this.items.find(i => i.iconName === iconName);
+    this.selectedItem = this.items.find((i) => i.iconName === iconName);
     this.router.navigate(['/', iconName]);
+    
   }
 
   changeCollapsed() {
