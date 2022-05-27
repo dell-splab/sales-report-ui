@@ -62,7 +62,6 @@ export class ClientComponent implements OnInit {
 
   changeClientStatus() {
     this.newClientStatus = !this.newClientStatus;
-    console.log(this.newClientStatus)
   }
 
 }
