@@ -26,7 +26,6 @@ label {
 
 .centralize {
   margin-bottom: 0px;
-  margin-left: 10px;
 }
 
 .centralize-label {
@@ -64,18 +63,20 @@ label {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
   cursor: default;
 }
 
 .card {
-  position: fixed;
+  position: absolute;
   display: flex;
   align-items: center;
-  z-index: 1050;
-  top: 20%;
-  left: 40%;
-  width: 20%;
+  margin-left: 450px;
+  width: 466px;
+  background-color: var(--background-primary);
+  border: 1px solid #7E7E7E;
+  label {
+    color: var(--text-secondary);
+  }
 }
 
 .input {
@@ -83,9 +84,10 @@ label {
   margin-bottom: 10px;
 }
 
-.button-card {
+.button-card  {
   display: flex;
   margin: 0;
+  color: var(--smooth-color);
 }
 
 .button {

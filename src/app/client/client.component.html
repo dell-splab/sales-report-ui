@@ -31,49 +31,33 @@
 
       <div *ngIf="newClientStatus" class="card dds__card card">
         <div class="dds__card__content">
+          <span class="dds__icons dds__plus-add"></span>
+          <label class="centralize">New Client</label>
           <div class="dds__input-text__container">
-            <label
-              id="text-input-label-421281248"
-              for="text-input-control-name-421281248"
-              >Name</label
-            >
-            <div class="dds__input-text__wrapper">
-              <input
-                type="text"
-                class="dds__input-text input"
-                name="text-input-control-name-421281248"
-                id="text-input-control-421281248"
-                required=""
-                aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
-              />
+            <div class="form-input-text-container">
+              <label class="label">Name</label>
+              <div class="dds__input-text__wrapper">
+                <input type="text" laceholder="Spring"/>
             </div>
+              </div>
           </div>
           <div class="dds__input-text__container">
-            <label
-              id="text-input-label-421281248"
-              for="text-input-control-name-421281248"
-              >Email</label
-            >
-            <div class="dds__input-text__wrapper larg-test">
-              <input
-                type="text"
-                class="dds__input-text input"
-                name="text-input-control-name-421281248"
-                id="text-input-control-421281248"
-                required=""
-                aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
-              />
+            <div class="form-input-text-container">
+              <label class="label">Email</label>
+              <div class="dds__input-text__wrapper">
+                <input placeholder="Spring"/>
             </div>
+              </div>
           </div>
           <div class="dds__card__action button">
-            <app-dell-btn
+              <app-dell-btn
               class="button-card"
               style="width: 100px"
-              type="primary"
+              type="secondary"
               [disabled]="false"
               (onClick)="changeClientStatus()"
             >
-              <label class="centralize-label"> Save</label>
+              <label class="centralize"> Cancel</label>
             </app-dell-btn>
             <app-dell-btn
               class="button-card"
@@ -82,7 +66,7 @@
               [disabled]="false"
               (onClick)="changeClientStatus()"
             >
-              <label class="centralize-label"> Cancel</label>
+              <label class="centralize"> Save</label>
             </app-dell-btn>
           </div>
         </div>
