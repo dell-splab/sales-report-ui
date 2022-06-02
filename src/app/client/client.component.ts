@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { ClientService } from './client.service';
+import { Client } from './client.model';
 
 @Component({
   selector: 'app-client',
@@ -10,6 +12,8 @@ import { Observable, Subject } from 'rxjs';
 export class ClientComponent implements OnInit {
 
   itemsSubject: Observable<any> = new Subject<any>();
+
+  clients: Client[] = [];
   items: any[] = [
     { name: 'Tyler Kennedy', email: 'kennedy.t@gmail.com', totalSpend: 'R$2.528,00', numberPurchases:'2', lastPurchaseData: '25/04/2022' },
     { name: 'Tyler Kennedy', email: 'kennedy.t@gmail.com', totalSpend: 'R$2.528,00', numberPurchases:'1', lastPurchaseData: '12/08/2021' },
@@ -34,10 +38,14 @@ export class ClientComponent implements OnInit {
   pageSize = 5;
   newClientStatus = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private clientService: ClientService) { }
 
   ngOnInit(): void {
-    this.fillTable(this.fromItem, this.toItem);
+    this.clientService.read().subscribe(clients => {
+      this.clients = clients  
+      this.fillTable(this.fromItem, this.toItem);
+    })
+  
   }
 
   navigate(iconName: string) {
@@ -49,7 +57,7 @@ export class ClientComponent implements OnInit {
 
     this.toItem = to;
 
-    this.filteredItems = this.items.slice(from, to + 1);
+    this.filteredItems = this.clients.slice(from, to + 1);
   }
 
   changePage(event: any) {

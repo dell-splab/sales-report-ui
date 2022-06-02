@@ -8,18 +8,20 @@ import { SharedModule } from './shared/shared.module';
 import { ThemeService } from './styles/theme/theme.service';
 import { LeadsComponent } from './leads/leads.component';
 import { ClientComponent } from './client/client.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LeadsComponent,
-    ClientComponent
+    ClientComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
     ThemeService
