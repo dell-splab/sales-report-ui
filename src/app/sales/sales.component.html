@@ -31,59 +31,47 @@
 
       <div *ngIf="newSaleStatus" class="card dds__card card">
         <div class="dds__card__content">
-          <div class="dds__input-text__container">
-            <label
-              id="text-input-label-421281248"
-              for="text-input-control-name-421281248"
-              >Name</label
-            >
-            <div class="dds__input-text__wrapper">
-              <input
-                type="text"
-                class="dds__input-text input"
-                name="text-input-control-name-421281248"
-                id="text-input-control-421281248"
-                required=""
-                aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
-              />
-            </div>
+          <div class="card-title">
+            <span class="dds__icons dds__plus-add"></span>
+            <label class="centralize">New Sale</label>
+            <span class="dds__icons dds__close-x" style="margin-left: 76%;"></span>
           </div>
           <div class="dds__input-text__container">
-            <label
-              id="text-input-label-421281248"
-              for="text-input-control-name-421281248"
-              >Item</label
-            >
-            <div class="dds__input-text__wrapper larg-test">
-              <input
-                type="text"
-                class="dds__input-text input"
-                name="text-input-control-name-421281248"
-                id="text-input-control-421281248"
-                required=""
-                aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
-              />
+            <div class="input form-input-text-container">
+              <label class="label">Item</label>
+              <div class="dds__input-text__wrapper">
+                <input type="text" placeholder="Spring"/>
             </div>
+              </div>
           </div>
-          <div class="dds__card__action button">
-            <app-dell-btn
-              class="button-card"
-              style="width: 100px"
-              type="primary"
-              [disabled]="false"
-              (onClick)="changeSalesStatus()"
-            >
-              <label class="centralize-label"> Save</label>
-            </app-dell-btn>
-            <app-dell-btn
-              class="button-card"
-              style="width: 100px"
-              type="primary"
-              [disabled]="false"
-              (onClick)="changeSalesStatus()"
-            >
-              <label class="centralize-label"> Cancel</label>
-            </app-dell-btn>
+          <div class="dds__input-text__container">
+            <div class="form-input-text-container">
+              <label class="label">Email</label>
+              <div class="dds__input-text__wrapper">
+                <input placeholder="Spring"/>
+            </div>
+              </div>
+          </div>
+          <div style="display: flex; margin: 10px 0px 10px 0px;">
+            <div style="flex-grow: 2.5; justify-content:space-between;"></div>
+            <div class="dds__card__action button">
+                <app-dell-btn
+                style="width: 100px"
+                type="secondary"
+                [disabled]="false"
+                (onClick)="changeSalesStatus()"
+              >
+                <label class="centralize">Cancel</label>
+              </app-dell-btn>
+              <app-dell-btn
+                style="width: 100px"
+                type="primary"
+                [disabled]="false"
+                (onClick)="changeSalesStatus()"
+              >
+                <label class="centralize">Save</label>
+              </app-dell-btn>
+            </div>
           </div>
         </div>
       </div>

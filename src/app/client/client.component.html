@@ -25,19 +25,22 @@
           (onClick)="changeClientStatus()"
         >
           <span class="dds__icons dds__plus-add"></span>
-          <label class="centralize"> New client</label>
+          <label class="centralize">New client</label>
         </app-dell-btn>
       </div>
-
+      
       <div *ngIf="newClientStatus" class="card dds__card card">
         <div class="dds__card__content">
-          <span class="dds__icons dds__plus-add"></span>
-          <label class="centralize">New Client</label>
+          <div class="card-title">
+            <span class="dds__icons dds__plus-add"></span>
+            <label class="centralize" style="margin-left: 2%;">New Client</label>
+            <span class="dds__icons dds__close-x" style="margin-left: 76%;"></span>
+          </div>
           <div class="dds__input-text__container">
-            <div class="form-input-text-container">
+            <div class="input form-input-text-container">
               <label class="label">Name</label>
               <div class="dds__input-text__wrapper">
-                <input type="text" laceholder="Spring"/>
+                <input type="text" placeholder="Spring"/>
             </div>
               </div>
           </div>
@@ -49,25 +52,26 @@
             </div>
               </div>
           </div>
-          <div class="dds__card__action button">
+          <div style="display: flex; margin: 10px 0px 10px 0px;">
+            <div style="flex-grow: 2.5; justify-content:space-between;"></div>
+            <div class="dds__card__action button">
+                <app-dell-btn
+                style="width: 100px"
+                type="secondary"
+                [disabled]="false"
+                (onClick)="changeClientStatus()"
+              >
+                <label class="centralize">Cancel</label>
+              </app-dell-btn>
               <app-dell-btn
-              class="button-card"
-              style="width: 100px"
-              type="secondary"
-              [disabled]="false"
-              (onClick)="changeClientStatus()"
-            >
-              <label class="centralize"> Cancel</label>
-            </app-dell-btn>
-            <app-dell-btn
-              class="button-card"
-              style="width: 100px"
-              type="primary"
-              [disabled]="false"
-              (onClick)="changeClientStatus()"
-            >
-              <label class="centralize"> Save</label>
-            </app-dell-btn>
+                style="width: 100px"
+                type="primary"
+                [disabled]="false"
+                (onClick)="changeClientStatus()"
+              >
+                <label class="centralize">Save</label>
+              </app-dell-btn>
+            </div>
           </div>
         </div>
       </div>
