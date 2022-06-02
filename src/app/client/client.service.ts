@@ -10,7 +10,7 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = "http://127.0.0.1:8080/clients"
+  baseUrl = "http://localhost:8080/clients"
 
   read(): Observable<Client[]> {
     return this.http.get<Client[]>(this.baseUrl)

@@ -102,7 +102,7 @@
           <tr *ngFor="let item of filteredItems">
             <td>{{ item.name }}</td>
             <td>{{ item.email }}</td>
-            <td>2567,89</td>
+            <td>2567.89</td>
             <td>5</td>
             <td>25-07-1999</td>
             <td>
@@ -116,7 +116,7 @@
     </div>
     <div class="pagination">
       <app-pagination
-        [items]="items"
+        [items]="clients"
         [fromItem]="fromItem"
         [toItem]="toItem"
         [currentPage]="currentPage"

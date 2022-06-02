@@ -42,10 +42,9 @@ export class ClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.clientService.read().subscribe(clients => {
-      this.clients = clients  
+      this.clients = clients 
       this.fillTable(this.fromItem, this.toItem);
     })
-  
   }
 
   navigate(iconName: string) {
