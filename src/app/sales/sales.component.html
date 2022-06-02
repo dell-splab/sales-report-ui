@@ -34,13 +34,13 @@
           <div class="card-title">
             <span class="dds__icons dds__plus-add"></span>
             <label class="centralize">New Sale</label>
-            <span class="dds__icons dds__close-x" style="margin-left: 76%;"></span>
+            <span class="dds__icons dds__close-x" style="margin-left: 76%; cursor: pointer;" (click)="changeSalesStatus()"></span>
           </div>
           <div class="dds__input-text__container">
             <div class="input form-input-text-container">
               <label class="label">Item</label>
               <div class="dds__input-text__wrapper">
-                <input type="text" placeholder="Spring"/>
+                <input [(ngModel)]="newSale.item" placeholder="Item"/>
             </div>
               </div>
           </div>
@@ -48,7 +48,7 @@
             <div class="form-input-text-container">
               <label class="label">Email</label>
               <div class="dds__input-text__wrapper">
-                <input placeholder="Spring"/>
+                <input [(ngModel)]="newSale.email" placeholder="Email"/>
             </div>
               </div>
           </div>
@@ -69,7 +69,7 @@
                 [disabled]="false"
                 (onClick)="changeSalesStatus()"
               >
-                <label class="centralize">Save</label>
+                <label class="centralize" (click)="saveSale()">Save</label>
               </app-dell-btn>
             </div>
           </div>

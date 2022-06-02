@@ -25,7 +25,7 @@
           (onClick)="changeClientStatus()"
         >
           <span class="dds__icons dds__plus-add"></span>
-          <label class="centralize">New client</label>
+          <label class="centralize" style="margin-left: 5%;">New client</label>
         </app-dell-btn>
       </div>
       
@@ -34,13 +34,13 @@
           <div class="card-title">
             <span class="dds__icons dds__plus-add"></span>
             <label class="centralize" style="margin-left: 2%;">New Client</label>
-            <span class="dds__icons dds__close-x" style="margin-left: 76%;"></span>
+            <span class="dds__icons dds__close-x" style="margin-left: 76%; cursor: pointer;" (click)="changeClientStatus()"></span>
           </div>
           <div class="dds__input-text__container">
             <div class="input form-input-text-container">
               <label class="label">Name</label>
               <div class="dds__input-text__wrapper">
-                <input type="text" placeholder="Spring"/>
+                <input type="text" [(ngModel)]="newClient.name" placeholder="Name"/>
             </div>
               </div>
           </div>
@@ -48,7 +48,7 @@
             <div class="form-input-text-container">
               <label class="label">Email</label>
               <div class="dds__input-text__wrapper">
-                <input placeholder="Spring"/>
+                <input [(ngModel)]="newClient.email" placeholder="Email"/>
             </div>
               </div>
           </div>
@@ -69,7 +69,7 @@
                 [disabled]="false"
                 (onClick)="changeClientStatus()"
               >
-                <label class="centralize">Save</label>
+                <label class="centralize" (click)="saveClient()">Save</label>
               </app-dell-btn>
             </div>
           </div>

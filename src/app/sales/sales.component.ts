@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { Sale } from './sales.model';
 
 @Component({
   selector: 'app-sales',
@@ -37,6 +38,11 @@ export class SalesComponent implements OnInit {
   pageSize = 5;
   
   newSaleStatus = false;
+  
+  newSale: Sale = {
+    item: "",
+    email: ""
+  }
 
   constructor(private router: Router) { }
 
@@ -68,5 +74,9 @@ export class SalesComponent implements OnInit {
 
   changeSalesStatus() {
     this.newSaleStatus = !this.newSaleStatus;
+  }
+
+  saveSale() {
+    console.log(this.newSale)
   }
 }

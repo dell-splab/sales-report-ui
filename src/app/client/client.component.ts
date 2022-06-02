@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { Client } from './client.model';
 
 @Component({
   selector: 'app-client',
@@ -34,10 +35,16 @@ export class ClientComponent implements OnInit {
   pageSize = 5;
   newClientStatus = false;
 
+  newClient: Client = {
+    name: "",
+    email: ""
+  };
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.fillTable(this.fromItem, this.toItem);
+    
   }
 
   navigate(iconName: string) {
@@ -62,6 +69,10 @@ export class ClientComponent implements OnInit {
 
   changeClientStatus() {
     this.newClientStatus = !this.newClientStatus;
+  }
+
+  saveClient() {
+    console.log(this.newClient)
   }
 
 }

@@ -9,6 +9,7 @@ import { ThemeService } from './styles/theme/theme.service';
 import { LeadsComponent } from './leads/leads.component';
 import { ClientComponent } from './client/client.component';
 import { SalesComponent } from './sales/sales.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SalesComponent } from './sales/sales.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [
     ThemeService
