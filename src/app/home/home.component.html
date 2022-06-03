@@ -4,82 +4,10 @@
     <label>/</label>
     <label class="active">Home Page</label>
   </div>
-  <p>Alguns componentes úteis:</p>
-  <app-dell-btn
-    style="width: 100px"
-    type="secondary"
-    [disabled]="false"
-    (onClick)="(null)"
-  >
-    <label class="centralize">Cancel</label>
-  </app-dell-btn>
-  <app-dell-btn
-    style="width: 100px"
-    type="primary"
-    [disabled]="false"
-    (onClick)="(null)"
-  >
-    <label class="centralize">Save</label>
-  </app-dell-btn>
   <div class="container-cards">
-    <div class="card">
-      <app-dell-icon dellStyles="dds__gear extra-large"></app-dell-icon>
-      <label>Config</label>
-    </div>
-    <div class="card">
-      <app-dell-icon dellStyles="dds__gear extra-large"></app-dell-icon>
-      <label>Config</label>
-    </div>
-    <div class="card">
-      <app-dell-icon dellStyles="dds__gear extra-large"></app-dell-icon>
-      <label>Config</label>
-    </div>
-    <div class="card">
-      <app-dell-icon dellStyles="dds__gear extra-large"></app-dell-icon>
-      <label>Config</label>
-    </div>
-  </div>
-  <div class="pre-table">
-    <div class="search-field">
-      <div class="form-input-text-container">
-        <label class="label">Name</label>
-        <input type="text" placeholder="Search text" />
-        <app-dell-icon
-          class="search-icon"
-          dellStyles="dds__search"
-        ></app-dell-icon>
-      </div>
-    </div>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <td *ngFor="let header of headers" id="header">
-              <span>{{ header.toUpperCase() }}</span>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of filteredItems">
-            <td>{{ item.column }}</td>
-            <td>{{ item.test }}</td>
-            <td>{{ item.config }}</td>
-            <td>{{ item.test }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="pagination">
-      <app-pagination
-        [items]="items"
-        [fromItem]="fromItem"
-        [toItem]="toItem"
-        [currentPage]="currentPage"
-        [pageSize]="pageSize"
-        [changesSubject]="itemsSubject"
-        (onPageChanged)="changePage($event)"
-        (onItemsPerPageChanged)="changeItemsPerPage($event)"
-      ></app-pagination>
+    <div *ngFor="let item of cardItems" class="card" (click)="navigate(item.iconName)">
+      <app-dell-icon dellStyles={{item.iconStyles}}></app-dell-icon>
+      <label>{{item.label}}</label>
     </div>
   </div>
 </div>
