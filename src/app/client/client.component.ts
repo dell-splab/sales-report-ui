@@ -40,6 +40,10 @@ export class ClientComponent implements OnInit {
     email: ""
   };
 
+  newClientNotValid = false;
+  newClientIsValid = false;
+  showOverlay = false;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -68,11 +72,36 @@ export class ClientComponent implements OnInit {
   }
 
   changeClientStatus() {
+    this.showOverlay = true;
     this.newClientStatus = !this.newClientStatus;
   }
 
   saveClient() {
-    console.log(this.newClient)
+    this.newClientStatus = false;
+    if(this.newClient.name === "" || this.newClient.email === ""){
+      this.newClientNotValid = true;
+      console.log(this.newClientStatus)
+    }
+    else {
+      console.log(this.newClient)
+      this.newClientIsValid = true;
+    }
+  }
+
+  closeNotification() {
+    this.newClientIsValid = false;
+    this.newClientNotValid = false;
+    this.showOverlay = false;
+  }
+  
+  openCard() {
+    this.showOverlay = true;
+    this.newClientStatus = true;
+  }
+
+  closeCard() {
+    this.newClientStatus = false;
+    this.showOverlay = false;
   }
 
 }

@@ -97,6 +97,23 @@ label {
   }
 }
 
+.notificationError {
+  position: absolute;
+  display: flex;
+  width: 70%;
+  height: 7%;
+  z-index: 1050;
+  background-color: lightpink;
+}
+
+.notificationSuccess {
+  position: absolute;
+  display: flex;
+  width: 70%;
+  height: 7%;
+  z-index: 1050;
+  background-color: lightgreen;
+}
 
 .input {
   width: 100%;

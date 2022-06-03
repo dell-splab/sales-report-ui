@@ -1,5 +1,27 @@
-<div *ngIf="newSaleStatus" id="overlay"></div>
+<div *ngIf="showOverlay" id="overlay"></div>
 <div class="container-sales">
+  <div *ngIf="newSaleNotValid" class="notificationError dds__alert dds__alert-dismissible" data-dismiss="dds__alert" aria-expanded="true" role="alert">
+    <div class="dds__less">
+        <div class="dds__d-flex dds__justify-content-between">
+               <div class="dds__alert-heading dds__d-flex dds__align-items-center">
+                   <i class="dds__icons dds__alert-error dds__icon-h4" aria-hidden="true"></i>
+                   <h4 class="alert-title" style="align-items: center;"> Error: Not added Sale.</h4>
+            </div>
+            <button type="button" class="dds__icons dds__close-x"(click)="closeNotification()"></button>
+        </div>
+    </div>
+  </div>
+  <div *ngIf="newSaleIsValid"class="notificationSuccess dds__alert dds__alert-dismissible" data-dismiss="dds__alert" aria-expanded="true" role="alert">
+    <div class="dds__less">
+        <div class="dds__d-flex dds__justify-content-between">
+               <div class="dds__alert-heading dds__d-flex dds__align-items-center">
+                   <i class="dds__icons dds__task-check dds__icon-h4" aria-hidden="true"></i>
+                   <h4 class="alert-title" style="align-items: center;"> Success: Added Sale.</h4>
+            </div>
+            <button type="button" class="dds__icons dds__close-x"(click)="closeNotification()"></button>
+        </div>
+    </div>
+  </div>
   <div class="info">
     <app-dell-icon dellStyles="dds__cart"></app-dell-icon>
     <label>/</label>
@@ -22,7 +44,7 @@
           style="width: 100px"
           type="primary"
           [disabled]="false"
-          (onClick)="changeSalesStatus()"
+          (onClick)="openCard()"
         >
           <span class="dds__icons dds__plus-add"></span>
           <label class="centralize"> New Sale</label>
@@ -34,7 +56,7 @@
           <div class="card-title">
             <span class="dds__icons dds__plus-add"></span>
             <label class="centralize">New Sale</label>
-            <span class="dds__icons dds__close-x" style="margin-left: 76%; cursor: pointer;" (click)="changeSalesStatus()"></span>
+            <span class="dds__icons dds__close-x" style="margin-left: 76%; cursor: pointer;" (click)="closeCard()"></span>
           </div>
           <div class="dds__input-text__container">
             <div class="input form-input-text-container">
@@ -59,7 +81,7 @@
                 style="width: 100px"
                 type="secondary"
                 [disabled]="false"
-                (onClick)="changeSalesStatus()"
+                (onClick)="closeCard()"
               >
                 <label class="centralize">Cancel</label>
               </app-dell-btn>
@@ -67,9 +89,9 @@
                 style="width: 100px"
                 type="primary"
                 [disabled]="false"
-                (onClick)="changeSalesStatus()"
+                (click)="saveSale()"
               >
-                <label class="centralize" (click)="saveSale()">Save</label>
+                <label class="centralize" >Save</label>
               </app-dell-btn>
             </div>
           </div>

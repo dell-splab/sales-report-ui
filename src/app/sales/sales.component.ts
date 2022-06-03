@@ -43,6 +43,11 @@ export class SalesComponent implements OnInit {
     item: "",
     email: ""
   }
+  
+  newSaleNotValid = false;
+  newSaleIsValid = false;
+
+  showOverlay = false;
 
   constructor(private router: Router) { }
 
@@ -73,10 +78,37 @@ export class SalesComponent implements OnInit {
   }
 
   changeSalesStatus() {
+    this.showOverlay = true;
     this.newSaleStatus = !this.newSaleStatus;
   }
 
   saveSale() {
-    console.log(this.newSale)
+    this.newSaleStatus = false;
+    if(this.newSale.item === "" || this.newSale.email === ""){
+      this.newSaleNotValid = true;
+      console.log(this.newSaleStatus)
+    }
+    else {
+      console.log(this.newSale)
+      this.newSaleIsValid = true;
+    }
   }
+
+  closeNotification() {
+    this.newSaleIsValid = false;
+    this.newSaleNotValid = false;
+    this.showOverlay = true;
+  }
+  
+  openCard() {
+    this.showOverlay = true;
+    this.newSaleStatus = true;
+  }
+
+  closeCard() {
+    this.newSaleStatus = false;
+    this.showOverlay = false;
+  }
+
+
 }
