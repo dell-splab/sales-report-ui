@@ -111,9 +111,9 @@
           <tr *ngFor="let item of filteredItems">
             <td>{{ item.name }}</td>
             <td>{{ item.email }}</td>
-            <td>{{ item.totalSpend }}</td>
-            <td>{{ item.numberPurchases }}</td>
-            <td>{{ item.lastPurchaseData }}</td>
+            <td>2567.89</td>
+            <td>5</td>
+            <td>25-07-1999</td>
             <td>
               <span>
                 <app-dell-icon dellStyles="dds__refresh-spin"></app-dell-icon>
@@ -125,7 +125,7 @@
     </div>
     <div class="pagination">
       <app-pagination
-        [items]="items"
+        [items]="clients"
         [fromItem]="fromItem"
         [toItem]="toItem"
         [currentPage]="currentPage"

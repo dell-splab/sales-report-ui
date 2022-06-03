@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { ClientService } from './client.service';
 import { Client } from './client.model';
 
 @Component({
@@ -10,6 +11,8 @@ import { Client } from './client.model';
 })
 export class ClientComponent implements OnInit {
   itemsSubject: Observable<any> = new Subject<any>();
+
+  clients: Client[] = [];
   items: any[] = [
     {
       name: 'Tyler Kennedy',
@@ -113,6 +116,7 @@ export class ClientComponent implements OnInit {
   pageSize = 5;
   newClientStatus = false;
 
+  constructor(private router: Router, private clientService: ClientService) {}
   newClient: Client = {
     name: '',
     email: '',
@@ -122,10 +126,11 @@ export class ClientComponent implements OnInit {
   newClientIsValid = false;
   showOverlay = false;
 
-  constructor(private router: Router) {}
-
   ngOnInit(): void {
-    this.fillTable(this.fromItem, this.toItem);
+    this.clientService.read().subscribe((clients) => {
+      this.clients = clients;
+      this.fillTable(this.fromItem, this.toItem);
+    });
   }
 
   navigate(iconName: string) {
@@ -137,7 +142,7 @@ export class ClientComponent implements OnInit {
 
     this.toItem = to;
 
-    this.filteredItems = this.items.slice(from, to + 1);
+    this.filteredItems = this.clients.slice(from, to + 1);
   }
 
   changePage(event: any) {

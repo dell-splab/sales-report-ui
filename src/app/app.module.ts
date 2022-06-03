@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { ThemeService } from './styles/theme/theme.service';
 import { LeadsComponent } from './leads/leads.component';
 import { ClientComponent } from './client/client.component';
+import { HttpClientModule } from '@angular/common/http';
 import { SalesComponent } from './sales/sales.component';
 import { FormsModule } from '@angular/forms';
 
@@ -17,17 +18,16 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     LeadsComponent,
     ClientComponent,
-    SalesComponent
+    SalesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [
-    ThemeService
-  ],
-  bootstrap: [AppComponent]
+  providers: [ThemeService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
