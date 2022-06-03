@@ -1,5 +1,27 @@
-<div *ngIf="newClientStatus" id="overlay"></div>
+<div *ngIf="showOverlay" id="overlay"></div>
 <div class="container-clients">
+  <div *ngIf="newClientNotValid" class="notificationError dds__alert dds__alert-dismissible" data-dismiss="dds__alert" aria-expanded="true" role="alert">
+    <div class="dds__less">
+        <div class="dds__d-flex dds__justify-content-between">
+               <div class="dds__alert-heading dds__d-flex dds__align-items-center">
+                   <i class="dds__icons dds__alert-error dds__icon-h4" aria-hidden="true"></i>
+                   <h4 class="alert-title" style="align-items: center;"> Error: Not added Client.</h4>
+            </div>
+            <button type="button" class="dds__icons dds__close-x"(click)="closeNotification()"></button>
+        </div>
+    </div>
+  </div>
+  <div *ngIf="newClientIsValid"class="notificationSuccess dds__alert dds__alert-dismissible" data-dismiss="dds__alert" aria-expanded="true" role="alert">
+    <div class="dds__less">
+        <div class="dds__d-flex dds__justify-content-between">
+               <div class="dds__alert-heading dds__d-flex dds__align-items-center">
+                   <i class="dds__icons dds__task-check dds__icon-h4" aria-hidden="true"></i>
+                   <h4 class="alert-title" style="align-items: center;"> Success: Added Client.</h4>
+            </div>
+            <button type="button" class="dds__icons dds__close-x"(click)="closeNotification()"></button>
+        </div>
+    </div>
+  </div>
   <div class="info">
     <app-dell-icon dellStyles="dds__user"></app-dell-icon>
     <label>/</label>
@@ -25,70 +47,57 @@
           (onClick)="changeClientStatus()"
         >
           <span class="dds__icons dds__plus-add"></span>
-          <label class="centralize"> New client</label>
+          <label class="centralize" style="margin-left: 5%;">New client</label>
         </app-dell-btn>
       </div>
-
+      
       <div *ngIf="newClientStatus" class="card dds__card card">
         <div class="dds__card__content">
-          <div class="dds__input-text__container">
-            <label
-              id="text-input-label-421281248"
-              for="text-input-control-name-421281248"
-              >Name</label
-            >
-            <div class="dds__input-text__wrapper">
-              <input
-                type="text"
-                class="dds__input-text input"
-                name="text-input-control-name-421281248"
-                id="text-input-control-421281248"
-                required=""
-                aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
-              />
-            </div>
+          <div class="card-title">
+            <span class="dds__icons dds__plus-add"></span>
+            <label class="centralize" style="margin-left: 2%;">New Client</label>
+            <span class="dds__icons dds__close-x" style="margin-left: 76%; cursor: pointer;" (click)="closeCard()"></span>
           </div>
           <div class="dds__input-text__container">
-            <label
-              id="text-input-label-421281248"
-              for="text-input-control-name-421281248"
-              >Email</label
-            >
-            <div class="dds__input-text__wrapper larg-test">
-              <input
-                type="text"
-                class="dds__input-text input"
-                name="text-input-control-name-421281248"
-                id="text-input-control-421281248"
-                required=""
-                aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
-              />
+            <div class="input form-input-text-container">
+              <label class="label">Name</label>
+              <div class="dds__input-text__wrapper">
+                <input type="text" [(ngModel)]="newClient.name" placeholder="Name"/>
             </div>
+              </div>
           </div>
-          <div class="dds__card__action button">
-            <app-dell-btn
-              class="button-card"
-              style="width: 100px"
-              type="primary"
-              [disabled]="false"
-              (onClick)="changeClientStatus()"
-            >
-              <label class="centralize-label"> Save</label>
-            </app-dell-btn>
-            <app-dell-btn
-              class="button-card"
-              style="width: 100px"
-              type="primary"
-              [disabled]="false"
-              (onClick)="changeClientStatus()"
-            >
-              <label class="centralize-label"> Cancel</label>
-            </app-dell-btn>
+          <div class="dds__input-text__container">
+            <div class="form-input-text-container">
+              <label class="label">Email</label>
+              <div class="dds__input-text__wrapper">
+                <input [(ngModel)]="newClient.email" placeholder="Email"/>
+            </div>
+              </div>
+          </div>
+          <div style="display: flex; margin: 10px 0px 10px 0px;">
+            <div style="flex-grow: 2.5; justify-content:space-between;"></div>
+            <div class="dds__card__action button">
+                <app-dell-btn
+                style="width: 100px"
+                type="secondary"
+                [disabled]="false"
+                (onClick)="closeCard()"
+              >
+                <label class="centralize">Cancel</label>
+              </app-dell-btn>
+              <app-dell-btn
+                style="width: 100px"
+                type="primary"
+                [disabled]="false"
+                (click)="saveClient()"
+              >
+                <label class="centralize">Save</label>
+              </app-dell-btn>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
     <div class="table-container">
       <table>
         <thead>
@@ -126,5 +135,6 @@
         (onItemsPerPageChanged)="changeItemsPerPage($event)"
       ></app-pagination>
     </div>
+    
   </div>
 </div>

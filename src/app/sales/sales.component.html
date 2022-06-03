@@ -1,5 +1,27 @@
-<div *ngIf="newSaleStatus" id="overlay"></div>
+<div *ngIf="showOverlay" id="overlay"></div>
 <div class="container-sales">
+  <div *ngIf="newSaleNotValid" class="notificationError dds__alert dds__alert-dismissible" data-dismiss="dds__alert" aria-expanded="true" role="alert">
+    <div class="dds__less">
+        <div class="dds__d-flex dds__justify-content-between">
+               <div class="dds__alert-heading dds__d-flex dds__align-items-center">
+                   <i class="dds__icons dds__alert-error dds__icon-h4" aria-hidden="true"></i>
+                   <h4 class="alert-title" style="align-items: center;"> Error: Not added Sale.</h4>
+            </div>
+            <button type="button" class="dds__icons dds__close-x"(click)="closeNotification()"></button>
+        </div>
+    </div>
+  </div>
+  <div *ngIf="newSaleIsValid"class="notificationSuccess dds__alert dds__alert-dismissible" data-dismiss="dds__alert" aria-expanded="true" role="alert">
+    <div class="dds__less">
+        <div class="dds__d-flex dds__justify-content-between">
+               <div class="dds__alert-heading dds__d-flex dds__align-items-center">
+                   <i class="dds__icons dds__task-check dds__icon-h4" aria-hidden="true"></i>
+                   <h4 class="alert-title" style="align-items: center;"> Success: Added Sale.</h4>
+            </div>
+            <button type="button" class="dds__icons dds__close-x"(click)="closeNotification()"></button>
+        </div>
+    </div>
+  </div>
   <div class="info">
     <app-dell-icon dellStyles="dds__cart"></app-dell-icon>
     <label>/</label>
@@ -22,7 +44,7 @@
           style="width: 100px"
           type="primary"
           [disabled]="false"
-          (onClick)="changeSalesStatus()"
+          (onClick)="openCard()"
         >
           <span class="dds__icons dds__plus-add"></span>
           <label class="centralize"> New Sale</label>
@@ -31,59 +53,47 @@
 
       <div *ngIf="newSaleStatus" class="card dds__card card">
         <div class="dds__card__content">
-          <div class="dds__input-text__container">
-            <label
-              id="text-input-label-421281248"
-              for="text-input-control-name-421281248"
-              >Name</label
-            >
-            <div class="dds__input-text__wrapper">
-              <input
-                type="text"
-                class="dds__input-text input"
-                name="text-input-control-name-421281248"
-                id="text-input-control-421281248"
-                required=""
-                aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
-              />
-            </div>
+          <div class="card-title">
+            <span class="dds__icons dds__plus-add"></span>
+            <label class="centralize">New Sale</label>
+            <span class="dds__icons dds__close-x" style="margin-left: 76%; cursor: pointer;" (click)="closeCard()"></span>
           </div>
           <div class="dds__input-text__container">
-            <label
-              id="text-input-label-421281248"
-              for="text-input-control-name-421281248"
-              >Item</label
-            >
-            <div class="dds__input-text__wrapper larg-test">
-              <input
-                type="text"
-                class="dds__input-text input"
-                name="text-input-control-name-421281248"
-                id="text-input-control-421281248"
-                required=""
-                aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
-              />
+            <div class="input form-input-text-container">
+              <label class="label">Item</label>
+              <div class="dds__input-text__wrapper">
+                <input [(ngModel)]="newSale.item" placeholder="Item"/>
             </div>
+              </div>
           </div>
-          <div class="dds__card__action button">
-            <app-dell-btn
-              class="button-card"
-              style="width: 100px"
-              type="primary"
-              [disabled]="false"
-              (onClick)="changeSalesStatus()"
-            >
-              <label class="centralize-label"> Save</label>
-            </app-dell-btn>
-            <app-dell-btn
-              class="button-card"
-              style="width: 100px"
-              type="primary"
-              [disabled]="false"
-              (onClick)="changeSalesStatus()"
-            >
-              <label class="centralize-label"> Cancel</label>
-            </app-dell-btn>
+          <div class="dds__input-text__container">
+            <div class="form-input-text-container">
+              <label class="label">Email</label>
+              <div class="dds__input-text__wrapper">
+                <input [(ngModel)]="newSale.email" placeholder="Email"/>
+            </div>
+              </div>
+          </div>
+          <div style="display: flex; margin: 10px 0px 10px 0px;">
+            <div style="flex-grow: 2.5; justify-content:space-between;"></div>
+            <div class="dds__card__action button">
+                <app-dell-btn
+                style="width: 100px"
+                type="secondary"
+                [disabled]="false"
+                (onClick)="closeCard()"
+              >
+                <label class="centralize">Cancel</label>
+              </app-dell-btn>
+              <app-dell-btn
+                style="width: 100px"
+                type="primary"
+                [disabled]="false"
+                (click)="saveSale()"
+              >
+                <label class="centralize" >Save</label>
+              </app-dell-btn>
+            </div>
           </div>
         </div>
       </div>
