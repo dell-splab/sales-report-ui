@@ -8,7 +8,9 @@ import { SharedModule } from './shared/shared.module';
 import { ThemeService } from './styles/theme/theme.service';
 import { LeadsComponent } from './leads/leads.component';
 import { ClientComponent } from './client/client.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { SalesComponent } from './sales/sales.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,16 +18,16 @@ import { HttpClientModule } from '@angular/common/http'
     HomeComponent,
     LeadsComponent,
     ClientComponent,
+    SalesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [
-    ThemeService
-  ],
-  bootstrap: [AppComponent]
+  providers: [ThemeService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

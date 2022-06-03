@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit, DoCheck {
     { iconName: 'home', label: 'Home', iconStyles: 'dds__icons dds__home' },
     { iconName: 'clients', label: 'Clients', iconStyles: 'dds__icons dds__user' },
     { iconName: 'leads', label: 'Leads', iconStyles: 'dds__icons dds__user-group-chat' },
+    { iconName: 'sales', label: 'Sales', iconStyles: 'dds__icons dds__cart' },
   ];
   selectedItem: any = { iconName: 'home', label: 'Home', iconStyles: 'dds__icons dds__home' };
 

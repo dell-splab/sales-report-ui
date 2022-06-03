@@ -4,15 +4,14 @@ import { Observable } from 'rxjs';
 import { Client } from './client.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClientService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  baseUrl = "http://localhost:8080/clients"
+  baseUrl = 'http://localhost:8080/clients';
 
   read(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.baseUrl)
+    return this.http.get<Client[]>(this.baseUrl);
   }
 }
