@@ -11,25 +11,27 @@ export class LeadsComponent implements OnInit {
 
   itemsSubject: Observable<any> = new Subject<any>();
   items: any[] = [
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
+    { name: 'Sara Morse', email: 'morse_s@gmail.com', pageAcessed: 'acessories' },
   ];
   filteredItems: any[] = [];
   fromItem = 0;
   toItem = 4;
   currentPage = 0;
   pageSize = 5;
-  headers = ['Column', 'Test', 'Config', 'Test'];
+  headersTable1 = ['Name', 'E-mail', 'Page acessed'];
+  headersTable2 = ['Name', 'Product Name (possible sale)'];
+  newLeadStatus = false;
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -54,6 +56,10 @@ export class LeadsComponent implements OnInit {
 
   changeItemsPerPage(event: any) {
     this.pageSize = parseInt(event);
+  }
+
+  changeLeadStatus() {
+    this.newLeadStatus = !this.newLeadStatus;
   }
 
 }
