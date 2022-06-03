@@ -104,6 +104,9 @@ label {
   height: 7%;
   z-index: 1050;
   background-color: lightpink;
+  h4 {
+    color: black;
+  }
 }
 
 .notificationSuccess {
@@ -113,6 +116,9 @@ label {
   height: 7%;
   z-index: 1050;
   background-color: lightgreen;
+  h4 {
+    color: black;
+  }
 }
 
 .input {
@@ -132,7 +138,6 @@ label {
 
 .button {
   display: flex;
-
 }
 
 input:focus ~ label,
