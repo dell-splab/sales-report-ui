@@ -1,0 +1,59 @@
+
+.outer-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+view-list{
+    width: 80%;
+}
+
+.vl-btn{
+    display: flex;
+    width: 80%;
+    height: 15%;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.active{
+    width: 80%;
+}
+
+.deactive{
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+
+    ::ng-deep .vl-icon span{
+        font-size: 0;
+    }
+
+}
+
+.vl-btn:hover{
+    background-color: var(--background-secondary);
+}
+
+app-dell-icon{
+    width: 100%;
+    align-items: center;
+    justify-content: center; 
+    &:hover{
+        opacity: 0.1;
+    }
+}
+
+
+::ng-deep .vl-icon span{
+    font-size: 3rem;
+    font-weight: 100;
+}

@@ -1,0 +1,58 @@
+<div class="inner-container">
+    <div class="pre-table">
+        <div class="search-field">
+            <div class="form-input-text-container">
+                <label class="label">Search</label>
+                <input type="text" placeholder="Search text" />
+                <app-dell-icon
+                class="search-icon"
+                dellStyles="dds__search"
+                ></app-dell-icon>
+            </div>
+            <div class="date-container">
+                <div class="date from">
+                    <label class="label">From</label>
+                    <input type="date" name="from">
+                    <app-dell-icon
+                    class="calendar-search-icon"
+                    dellStyles="dds__calendar-search"
+                    ></app-dell-icon>
+                </div>
+                <div class="date to">
+                    <label class="label">To</label>
+                    <input type="date" name="to">
+                    <app-dell-icon
+                    class="calendar-search-icon"
+                    dellStyles="dds__calendar-search"
+                    ></app-dell-icon>
+                </div>
+            </div>
+            <div class="arrow">
+                <app-dell-icon
+                class="chevron-left"
+                dellStyles="dds__chevron-left"
+                ></app-dell-icon>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="table-container">
+        <table>
+            <thead>
+            <tr>
+                <td *ngFor="let name of columns">
+                <span>{{name}}</span>
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let entrie of data">
+                <td>{{entrie.name}}</td>
+                <td>{{entrie.product}}</td>
+                <td>{{entrie.date}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

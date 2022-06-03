@@ -1,0 +1,31 @@
+<div class="outer-container" >
+    <div [ngClass]="selected === 'date'? 'active' : 'vl-btn'" (click)="changeSelected('date')">
+        <app-dell-icon
+        class="vl-icon"
+        dellStyles="dds__user-contact"
+        [ngStyle]="selected === 'date'? {'visibility':'hidden'} : {}"
+         *ngIf="selected !== 'date'"
+        ></app-dell-icon>
+        <view-list [ngClass]="selected == 'date' ? 'active' : 'deactive'"></view-list>
+    </div>
+    
+    <div [ngClass]="selected == 'client'? 'active' : 'vl-btn'" (click)="changeSelected('client')">
+        <app-dell-icon
+        class="vl-icon"
+        dellStyles="dds__charge-back-report"
+        [ngStyle]="selected == 'client'? {'visibility':'hidden'} : {}"
+        *ngIf="selected !== 'client'"
+        ></app-dell-icon>
+        <view-list [ngClass]="selected == 'client' ? 'active' : 'deactive'"></view-list>
+    </div>
+    
+    <div [ngClass]="selected === 'product'? 'active' : 'vl-btn'" (click)="changeSelected('product')">
+        <app-dell-icon
+        class="vl-icon"
+        dellStyles="dds__chart-insights"
+        [ngStyle]="selected == 'product'? {'visibility':'hidden'} : {}"
+         *ngIf="selected !== 'product'"
+        ></app-dell-icon>
+        <view-list [ngClass]="selected === 'product' ? 'active' : 'deactive'"></view-list>
+    </div>
+</div>

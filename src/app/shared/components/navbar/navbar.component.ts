@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   collapsed: boolean = false;
   items: Array<any> =  [
     { iconName: 'home', label: 'Home', iconStyles: 'dds__icons dds__home' },
+    { iconName: 'reports', label: 'Reports', iconStyles: 'dds__icons dds__doc-reports' }
   ];
   selectedItem: any = { iconName: 'home', label: 'Home', iconStyles: 'dds__icons dds__home' };
 
