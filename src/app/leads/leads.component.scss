@@ -3,7 +3,7 @@ $filter-height: 33px;
 
 .container-leads {
   width: 100%;
-  height: 65vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -34,18 +34,9 @@ label {
   cursor: pointer;
 }
 
-.container-cards {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .pre-table {
   width: 80%;
-  height: 350px;
+  height: 500px;
   border: 1px solid var(--border-color);
   padding: 10px;
 }
@@ -78,23 +69,70 @@ label {
 }
 
 .card {
-  position: fixed;
+  position: absolute;
   display: flex;
-  align-items: center;
+  width: 30%;
+  height: 23%;
   z-index: 1050;
-  top: 20%;
-  left: 40%;
-  width: 20%;
+  margin-left: 25%;
+  background-color: var(--background-primary);
+  border: 1px solid #7E7E7E;
+  label {
+    cursor: pointer;
+    align-items: center;
+  }
+  .dds__input-text__container {
+    width: 90%;
+    margin-left: 22px;
+  }
+  .card-title {
+    margin: 10px 0px 10px 22px;
+  }
+  .dds__card__action{
+    flex-grow: 1;
+    justify-content: space-evenly;
+  }
+  .dds__input-text__wrapper {
+    width: 85%;
+  }
+}
+
+.notificationError {
+  position: absolute;
+  display: flex;
+  width: 70%;
+  height: 7%;
+  z-index: 1050;
+  background-color: lightpink;
+  h4 {
+    color: black;
+  }
+}
+
+.notificationSuccess {
+  position: absolute;
+  display: flex;
+  width: 70%;
+  height: 7%;
+  z-index: 1050;
+  background-color: lightgreen;
+  h4 {
+    color: black;
+  }
 }
 
 .input {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .button-card {
   display: flex;
   margin: 0;
+  color: var(--smooth-color);
+  margin-top: 20px;
+  margin-left: 50px;
+  justify-content: space-around;
 }
 
 .button {
@@ -105,51 +143,14 @@ input:focus ~ label,
 input:valid ~ label {
   position: absolute;
   top: -19px;
-  color: green;
+  color: whitesmoke;;
   font-size: 13px;
   font-weight: 600;
 }
 input:focus {
-  border: 1px solid green;
+  border: 0.5px solid whitesmoke;
 }
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-.warning {
-  border: 1px solid red !important;
-}
-.checkmark__circle {
-  stroke-dasharray: 166;
-  stroke-dashoffset: 166;
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-  stroke: #7ac142;
-  fill: none;
-  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-}
-.checkmark {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: block;
-  stroke-width: 2;
-  stroke: #fff;
-  stroke-miterlimit: 10;
-  margin: 10% auto;
-  box-shadow: inset 0px 0px 0px #7ac142;
-  animation: fill 0.4s ease-in-out 0.4s forwards,
-    scale 0.3s ease-in-out 0.9s both;
-}
-.checkmark__check {
-  transform-origin: 50% 50%;
-  stroke-dasharray: 48;
-  stroke-dashoffset: 48;
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-}
+
 @keyframes stroke {
   100% {
     stroke-dashoffset: 0;
@@ -178,13 +179,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .table-container {
   height: calc(100% - #{$search-field-height} - #{$filter-height});
-  overflow: hidden;
+  overflow: auto;
 }
 
 .pagination {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  
+  margin-top: 10px;
+  width: 100%;
+  padding-right: 15px;
 }
 
 :host ::ng-deep {
@@ -211,11 +212,12 @@ input[type="number"]::-webkit-outer-spin-button {
 table {
   width: 100%;
   border-spacing: 0;
+  min-height: 300px;
   tr {
     width: 100%;
     display: grid;
     padding: 0;
-    cursor: pointer;
+    cursor: dafault;
 
     &.table1 {
       grid-template-columns: 25% 25% 50%;
@@ -231,9 +233,9 @@ table {
   tbody {
     width: 100%;
     display: block;
-    overflow: auto;
     max-height: 41vh;
     padding: 0;
+    
   }
   thead td {
     color: var(--text-primary);
@@ -259,7 +261,8 @@ table {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      height: 20px !important;
+      
+      height: 260vh;
       button {
         border: none;
         background: transparent;

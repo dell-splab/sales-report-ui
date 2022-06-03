@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { Lead } from './leads.model'
 
 @Component({
   selector: 'app-leads',
@@ -32,6 +33,16 @@ export class LeadsComponent implements OnInit {
   headersTable1 = ['Name', 'E-mail', 'Page acessed'];
   headersTable2 = ['Name', 'Product Name (possible sale)'];
   newLeadStatus = false;
+
+  newLead: Lead = {
+    name: '',
+    email: '',
+  };
+
+  newLeadNotValid = false;
+  newLeadIsValid = false;
+  showOverlay = false;
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -59,7 +70,33 @@ export class LeadsComponent implements OnInit {
   }
 
   changeLeadStatus() {
+    this.showOverlay = true;
     this.newLeadStatus = !this.newLeadStatus;
+  }
+
+  saveLead() {
+    this.newLeadStatus = false;
+    if (this.newLead.name === '' || this.newLead.email === '') {
+      this.newLeadNotValid = true;
+    } else {
+      this.newLeadIsValid = true;
+    }
+  }
+
+  closeNotification() {
+    this.newLeadIsValid = false;
+    this.newLeadNotValid = false;
+    this.showOverlay = false;
+  }
+
+  openCard() {
+    this.showOverlay = true;
+    this.newLeadStatus = true;
+  }
+
+  closeCard() {
+    this.newLeadStatus = false;
+    this.showOverlay = false;
   }
 
 }
