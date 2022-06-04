@@ -1,0 +1,131 @@
+<div *ngIf="newLeadStatus" id="overlay"></div>
+<div class="container-leads">
+  <div class="info">
+    <app-dell-icon dellStyles="dds__user-group-chat"></app-dell-icon>
+    <label>/</label>
+    <label class="active">Leads</label>
+  </div>
+  <div class="pre-table">
+    <div class="up-table">
+      <div class="search-field">
+        <div class="form-input-text-container">
+          <label class="label">Search</label>
+          <input type="text" placeholder="Spring" />
+          <app-dell-icon class="search-icon" dellStyles="dds__search"></app-dell-icon>
+        </div>
+      </div>
+      <div class="new-lead">
+        <app-dell-btn style="width: 100px" type="primary" [disabled]="false" (onClick)="changeLeadStatus()">
+          <span class="dds__icons dds__plus-add"></span>
+          <label class="centralize"> New lead</label>
+        </app-dell-btn>
+      </div>
+    </div>
+
+    <div *ngIf="newLeadStatus" class="card dds__card card">
+      <div class="dds__card__content">
+        <div class="dds__input-text__container">
+          <label
+            id="text-input-label-421281248"
+            for="text-input-control-name-421281248"
+            >Name</label
+          >
+          <div class="dds__input-text__wrapper">
+            <input
+              type="text"
+              class="dds__input-text input"
+              name="text-input-control-name-421281248"
+              id="text-input-control-421281248"
+              required=""
+              aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
+            />
+          </div>
+        </div>
+        <div class="dds__input-text__container">
+          <label
+            id="text-input-label-421281248"
+            for="text-input-control-name-421281248"
+            >Email</label
+          >
+          <div class="dds__input-text__wrapper larg-test">
+            <input
+              type="text"
+              class="dds__input-text input"
+              name="text-input-control-name-421281248"
+              id="text-input-control-421281248"
+              required=""
+              aria-labelledby="text-input-label-421281248 text-input-helper-421281248"
+            />
+          </div>
+        </div>
+        <div class="dds__card__action button">
+          <app-dell-btn
+            class="button-card"
+            style="width: 100px"
+            type="primary"
+            [disabled]="false"
+            (onClick)="changeLeadStatus()"
+          >
+            <label class="centralize-label"> Save</label>
+          </app-dell-btn>
+          <app-dell-btn
+            class="button-card"
+            style="width: 100px"
+            type="primary"
+            [disabled]="false"
+            (onClick)="changeLeadStatus()"
+          >
+            <label class="centralize-label"> Cancel</label>
+          </app-dell-btn>
+        </div>
+      </div>
+    </div>
+
+    <div class="double-table">
+      <div class="table1-pagination" style="flex-grow:4; margin-right: 40px;">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr class="table1">
+                <td *ngFor="let header of headersTable1" id="header">
+                  <span> {{ header }} </span>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table1" *ngFor="let item of filteredItems">
+                <td>{{ item.name}}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.pageAcessed }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <app-pagination [items]="items" [fromItem]="fromItem" [toItem]="toItem" [currentPage]="currentPage"
+            [pageSize]="pageSize" [changesSubject]="itemsSubject" (onPageChanged)="changePage($event)"
+            (onItemsPerPageChanged)="changeItemsPerPage($event)"></app-pagination>
+        </div>
+      </div>
+      <div class="table-container" style="flex-grow: 1.5">
+        <table>
+          <thead>
+            <tr class="table2">
+              <td *ngFor="let header of headersTable2" id="header">
+                <span>
+                  {{ header }}
+                </span>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table2" *ngFor="let item of filteredItems">
+              <td>{{ item.name}}</td>
+              <td>{{ item.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

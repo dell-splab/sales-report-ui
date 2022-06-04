@@ -1,6 +1,27 @@
 
+
+.inner-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    app-dell-icon {
+      padding-top: 2px;
+      margin-right: 10px;
+    }
+    label{
+      margin-right: 10px;
+    }
+}
+
+.info{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 .outer-container{
-    width: 100%;
+    width: 95%;
     height: 100%;
     display: flex;
     

@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavItemComponent } from './components/navbar/nav-item/nav-item.component';
 import { DellIconComponent } from './components/dell-icon/dell-icon.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     NavbarComponent,
     NavItemComponent,
-    DellIconComponent
+    DellIconComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DellBtnComponent,
     SpinnerComponent,
     IconComponent,
-    DellIconComponent
+    DellIconComponent,
+    PaginationComponent
   ]
 })
 export class SharedModule {}

@@ -15,8 +15,8 @@
         border: 1px solid var(--border-color);
         height: 80%; 
         width: 97%;
-        overflow-y:scroll;
-        padding: 0 5px 0 5px
+        padding: 0 5px 0 5px;
+        overflow: hidden;
     }
 
     
@@ -63,25 +63,35 @@
         flex-direction: row;
         align-items: center;
     }
+    
+    .from {
+        width: 55%;
+    }
     .calendar-search-icon{
         position: absolute;
-        right: 8px;
+        right: max(10%);
         pointer-events: none;
         cursor: pointer;
     }
 
-    .arrow{
+    .ctn{
+        display: flex;
+        border: 1px solid var(--border-color);
+        justify-content: center;
+        align-items: center;
         width: 3%;
-        padding: 0 20px 0 2%;
+        height: 30px;
+        &:hover {
+            background-color: var(--background-secondary);
+            cursor: pointer;
+        }
+    }
+    .arrow{
         // border: 1px solid var(--border-color);
         transform: rotate(-90deg);
         display:flex;
         align-items: center;
         justify-content: center;
-        &:hover {
-            background-color: var(--background-secondary);
-            cursor: pointer;
-        }
     }
 
     input[type=date]{
@@ -98,6 +108,7 @@
     ::-webkit-calendar-picker-indicator {
             background: none;
             width: 15%;
+            padding-right: 15px;
             cursor: pointer;
         }
 

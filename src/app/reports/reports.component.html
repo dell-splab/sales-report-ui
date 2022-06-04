@@ -1,8 +1,15 @@
 <div class="outer-container" >
+    <div class="info">
+        <div class="inner-info">
+            <app-dell-icon dellStyles="dds__doc-reports"></app-dell-icon>
+            <label>/</label>
+            <label>Reports</label>
+        </div>
+    </div>
     <div [ngClass]="selected === 'date'? 'active' : 'vl-btn'" (click)="changeSelected('date')">
         <app-dell-icon
         class="vl-icon"
-        dellStyles="dds__user-contact"
+        dellStyles="dds__cart"
         [ngStyle]="selected === 'date'? {'visibility':'hidden'} : {}"
          *ngIf="selected !== 'date'"
         ></app-dell-icon>
@@ -12,7 +19,7 @@
     <div [ngClass]="selected == 'client'? 'active' : 'vl-btn'" (click)="changeSelected('client')">
         <app-dell-icon
         class="vl-icon"
-        dellStyles="dds__charge-back-report"
+        dellStyles="dds__user-contact"
         [ngStyle]="selected == 'client'? {'visibility':'hidden'} : {}"
         *ngIf="selected !== 'client'"
         ></app-dell-icon>

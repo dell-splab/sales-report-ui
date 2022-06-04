@@ -11,6 +11,7 @@ export class ReportsComponent implements OnInit {
 
   options = ["date","client","product"]
   selected = this.options[0];
+  
   data = [{ "name":"Tyler Kennedy",
         	  "product": "OptiPlex 3090 Micro",
             "date": "11/05/2022"},
