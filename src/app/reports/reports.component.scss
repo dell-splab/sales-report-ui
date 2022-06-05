@@ -1,0 +1,80 @@
+
+
+.inner-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    app-dell-icon {
+      padding-top: 2px;
+      margin-right: 10px;
+    }
+    label{
+      margin-right: 10px;
+    }
+}
+
+.info{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.outer-container{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+view-list{
+    width: 80%;
+}
+
+.vl-btn{
+    display: flex;
+    width: 80%;
+    height: 15%;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.active{
+    width: 80%;
+}
+
+.deactive{
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+
+    ::ng-deep .vl-icon span{
+        font-size: 0;
+    }
+
+}
+
+.vl-btn:hover{
+    background-color: var(--background-secondary);
+}
+
+app-dell-icon{
+    width: 100%;
+    align-items: center;
+    justify-content: center; 
+    &:hover{
+        opacity: 0.1;
+    }
+}
+
+
+::ng-deep .vl-icon span{
+    font-size: 3rem;
+    font-weight: 100;
+}

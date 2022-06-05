@@ -1,0 +1,38 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 200px;
+  color: var(--text-secondary);
+  background: var(--background-secondary);
+}
+
+.nav-items {
+  height: 100%;
+}
+
+.collapse-expand {
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+::ng-deep .collapse-expand .dds__icons {
+  font-weight: bold;
+}
+/*# sourceMappingURL=navbar.component.css.map */

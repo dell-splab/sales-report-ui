@@ -1,0 +1,123 @@
+.small {
+  height: 20px;
+  width: 20px;
+}
+
+.small .load {
+  height: 20px;
+  width: 20px;
+}
+
+.medium {
+  height: 30px;
+  width: 30px;
+}
+
+.medium .load {
+  height: 30px;
+  width: 30px;
+}
+
+.large {
+  height: 40px;
+  width: 40px;
+}
+
+.large .load {
+  height: 40px;
+  width: 40px;
+}
+
+.huge {
+  height: 60px;
+  width: 60px;
+}
+
+.huge .load {
+  height: 60px;
+  width: 60px;
+}
+
+.spinner {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.load {
+  position: relative;
+}
+
+.load div {
+  position: relative;
+  height: 40%;
+  width: 40%;
+  background: var(--spinner-primary);
+  -webkit-animation: load 1.2s linear infinite;
+          animation: load 1.2s linear infinite;
+}
+
+.load div:nth-child(1) {
+  top: 50%;
+  left: 0;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.load div:nth-child(2) {
+  top: -40%;
+  left: 0;
+  -webkit-animation-delay: -0.5625s;
+          animation-delay: -0.5625s;
+}
+
+.load div:nth-child(3) {
+  top: -80%;
+  left: 50%;
+  -webkit-animation-delay: -0.375s;
+          animation-delay: -0.375s;
+}
+
+.load div:nth-child(4) {
+  top: -70%;
+  left: 50%;
+  -webkit-animation-delay: -0.1875s;
+          animation-delay: -0.1875s;
+}
+
+@-webkit-keyframes load {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=spinner.component.css.map */
