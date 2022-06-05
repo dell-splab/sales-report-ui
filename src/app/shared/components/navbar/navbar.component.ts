@@ -59,7 +59,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   changeSelectedItem(iconName: string) {
     this.selectedItem = this.items.find((i) => i.iconName === iconName);
     this.router.navigate(['/', iconName]);
-
+    
   }
 
   changeCollapsed() {

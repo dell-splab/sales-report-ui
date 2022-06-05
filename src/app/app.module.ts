@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     ViewListComponent,
     LeadsComponent,
     SalesComponent,
-    ClientComponent,
+    ClientComponent
   ],
   imports: [
     AppRoutingModule,
