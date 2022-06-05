@@ -1,57 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
-  itemsSubject: Observable<any> = new Subject<any>();
-  items: any[] = [
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-    { column: 'column', test: 'test', config: 'config' },
-  ];
-  filteredItems: any[] = [];
-  fromItem = 0;
-  toItem = 4;
-  currentPage = 0;
-  pageSize = 5;
-  headers = ['Column', 'Test', 'Config', 'Test'];
+export class HomeComponent {
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    this.fillTable(this.fromItem, this.toItem);
-  }
+  cardItems: Array<any> =  [
+    { iconName: 'clients', label: 'Clients', iconStyles: 'dds__icons dds__user extra-large' },
+    { iconName: 'leads', label: 'Leads', iconStyles: 'dds__icons dds__user-group-chat extra-large' },
+    { iconName: 'sales', label: 'Sales', iconStyles: 'dds__icons dds__cart extra-large' },
+    { iconName: 'reports', label: 'Reports', iconStyles: 'dds__icons dds__doc-reports extra-large' },
+  ];
 
   navigate(iconName: string) {
     this.router.navigate(['/', iconName]);
-  }
-
-  fillTable(from: number, to: number) {
-    this.fromItem = from;
-
-    this.toItem = to;
-
-    this.filteredItems = this.items.slice(from, to + 1);
-  }
-
-  changePage(event: any) {
-    this.fillTable(event.from, event.to);
-  }
-
-  changeItemsPerPage(event: any) {
-    this.pageSize = parseInt(event);
   }
 }

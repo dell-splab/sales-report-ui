@@ -1,0 +1,56 @@
+.nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.nav-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.nav-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 150px;
+  color: var(--text-secondary);
+  padding-left: 10px;
+}
+
+.selected {
+  border-left: 3px solid var(--text-primary);
+  border-radius: 2px;
+  background-color: var(--background-primary);
+}
+
+.selected .nav-icon {
+  padding-right: 4px;
+}
+/*# sourceMappingURL=nav-item.component.css.map */

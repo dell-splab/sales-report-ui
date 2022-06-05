@@ -1,0 +1,262 @@
+$search-field-height: 33px;
+$filter-height: 33px;
+
+.container-sales {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--smooth-color);
+  position: relative;
+}
+
+.info {
+  width: 90%;
+
+  app-dell-icon {
+    padding-top: 2px;
+  }
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.centralize {
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.centralize-label {
+  margin-bottom: 0px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.pre-table {
+  width: 80%;
+  height: 300px;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+}
+
+.up-table {
+  display: flex;
+}
+
+.new-sales {
+    margin-left: 2%;
+    width: 15%;
+    align-items: center;
+    label {
+      cursor: pointer;
+    }
+  }
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: default;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  width: 30%;
+  height: 23%;
+  z-index: 1050;
+  margin-left: 25%;
+  background-color: var(--background-primary);
+  border: 1px solid #7E7E7E;
+  label {
+    cursor: pointer;
+    align-items: center;
+  }
+  .dds__input-text__container {
+    width: 90%;
+    margin-left: 22px;
+  }
+  .card-title {
+    margin: 10px 0px 10px 22px;
+  }
+  .dds__card__action{
+    flex-grow: 1;
+    justify-content: space-evenly;
+  }
+  .dds__input-text__wrapper {
+    width: 85%;
+  }
+}
+
+.notificationError {
+  position: absolute;
+  display: flex;
+  width: 70%;
+  height: 7%;
+  z-index: 1050;
+  background-color: lightpink;
+  h4 {
+    color: black;
+  }
+}
+
+.notificationSuccess {
+  position: absolute;
+  display: flex;
+  width: 70%;
+  height: 7%;
+  z-index: 1050;
+  background-color: lightgreen;
+  h4 {
+    color: black;
+  }
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button-card  {
+  display: flex;
+  margin: 0;
+  color: var(--smooth-color);
+  margin-top: 20px;
+  margin-left: 50px;
+  justify-content: space-around;
+
+}
+
+.button {
+  display: flex;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  position: absolute;
+  top: -19px;
+  color: whitesmoke;
+  font-size: 13px;
+  font-weight: 600;
+}
+input:focus {
+  border: 0.5px solid whitesmoke;
+}
+
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+.table-container {
+  height: calc(100% - #{$search-field-height} - #{$filter-height});
+  overflow: auto;
+}
+
+.pagination {
+  margin-top: 10px;
+  width: 100%;
+  padding-right: 15px;
+}
+
+:host ::ng-deep {
+  .search-field {
+    width: 85%;
+    .form-input-text-container {
+      max-height: $search-field-height;
+      height: $search-field-height;
+
+      input {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.search-icon {
+  margin-right: 5px;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  tr {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    cursor: default;
+    padding: 0;
+  }
+  thead {
+    width: calc(100% - 10px);
+  }
+  tbody {
+    width: 100%;
+    display: block;
+    max-height: 41vh;
+    padding: 0;
+  }
+  thead td {
+    color: var(--text-primary);
+    padding: 5px 0;
+    word-wrap: break-word;
+    table-layout: fixed;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--tableline-color);
+  }
+  tbody td {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--tableline-color);
+    color: var(--tableline-color);
+    word-wrap: break-word;
+    table-layout: fixed;
+    text-align: center;
+    vertical-align: middle;
+    span {
+      cursor: pointer;
+    }
+    div {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 20px !important;
+      button {
+        border: none;
+        background: transparent;
+        color: var(--text-secondary);
+      }
+    }
+  }
+
+  tbody tr {
+    &:hover {
+      background-color: var(--background-secondary);
+    }
+  }
+}
